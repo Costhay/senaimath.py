@@ -1,12 +1,13 @@
-#Arthur
-def pi(n_termos=100000000): #numero default de termos cem milhões
-    pi_quarto = 0
-    for n in range(n_termos):
-        termo = ((-1)**n) / (2*n + 1)
-        pi_quarto += termo
-    
-    return pi_quarto * 4
+#thyerrisson euler
+def calcular_euler(precisao=10):
+    e_calculado = 1
+    fatorial = 1
 
+    for num in range(0,precisao):
+        if num > 0:
+            fatorial *= num
+            e_calculado += 1 / fatorial
+    return e_calculado
 
-aproximacao = pi()
-print(f"PI aproximado: {aproximacao}")
+calculo_euler = calcular_euler(10)
+print(f"O valor de e calculado com a precisao de {10} é de {calculo_euler}!")
